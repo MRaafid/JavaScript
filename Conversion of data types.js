@@ -10,4 +10,26 @@ console.group('Number to BigInt');
     console.log(typeof c);
     console.log(typeof d);
 console.groupEnd();
+console.group('Number to string');
+    let e = 10;
+    let f = String(e)
+    console.log(typeof e);
+    console.log(typeof f);
+console.groupEnd();
+{
+    console.group('string to Number');
+    let e = '10';
+    let f = Number(e)
+    console.log(typeof e);
+    console.log(typeof f);
+console.groupEnd();
+}
 
+{
+    console.group('array to string');
+    let a = ['a','b','c'];
+    let b = String(a)
+    console.log(typeof e);
+    console.log(typeof f);
+console.groupEnd();
+}
