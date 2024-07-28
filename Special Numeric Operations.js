@@ -27,3 +27,12 @@ console.group('Unary Plus (+): ');
     console.log(d)
     console.log(typeof d)
 console.groupEnd();
+
+console.group('To check if the given elemet is a Number')
+    a = 100;
+    b = 'a'
+    console.log(isNaN(a)); // false: if a is number 
+    console.log(isNaN(b)); // true: if a is not a number
+    console.log(!isNaN(a)); // true: if a is number
+    console.log(!isNaN(b)); // false: if a is not a number
+console.groupEnd();
