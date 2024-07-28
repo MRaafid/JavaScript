@@ -1,51 +1,68 @@
-let a = prompt('enter a first number:');
-let b = prompt('enter the second number:');
-let c = prompt(`Choose an operation: \n  1. Add \n 2. Subtract \n   3. Average \n  4. Multiply \n    5. All \n   6.Exit \nNote: The input Should be in numbers`);
-if(a==6)
-    {
+while (true) {
+    let a = prompt('Enter the first number:');
+    if (a === null) {
         window.close();
+        break;
     }
-else
-    {
-        let sum = a+b;
-        let diff_1 = a-b;
-        let diff_2 = a+b;
-        let avg = sum/2;
-        let mul = a*b;
-        switch(c)
-            {
-                case 1:
-                    {
-                        alert(`${a} + ${b} = ${sum}`);
-                        break;
-                    }
-                case 2:
-                    {
-                        alert(`${a} - ${b} = ${diff_1} \n${b} - ${a} = ${diff_2}`);
-                        break;
-                    }
-                case 3:
-                    {
-                        alert(`Average of ${a} and ${b} is ${avg}`);
-                        break;
-                    }
-                case 4:
-                    {
-                        alert(`${a} X ${b} = ${mul}`);
-                        break;
-                    }
-                case 5:
-                    {
-                        alert(`${a} + ${b} = ${sum}
-                            ${a} - ${b} = ${diff_1} 
-                            ${b} - ${a} = ${diff_2}
-                            Average of ${a} and ${b} is ${avg}
-                            ${a} X ${b} = ${mul}`);
-                            break;
-                    }
-                default:
-                    {
-                        alert('Error!: Invalid Input')
-                    }
-            }
+    a = parseFloat(a) || 0;
+
+    let b;
+    while (true) {
+        b = prompt('Enter the second number:');
+        if (b === null) continue;
+        b = parseFloat(b) || 0;
+        break;
     }
+
+    let c;
+    while (true) {
+        c = prompt(`
+            Choose an operation: 
+                1. Add 
+                2. Subtract 
+                3. Average 
+                4. Multiply 
+                5. All 
+                6. Exit 
+            Note: The input should be a number between 1 and 6.`);
+        if (c === null) continue;
+        c = parseInt(c, 10) || 0;
+
+        if (c >= 1 && c <= 6) break; // Valid input, break out of inner loop
+        alert('Error: Invalid Input! \nPlease enter a number between 1 and 6.');
+    }
+
+    if (c === 6) {
+        window.close();
+        break;
+    }
+
+    let sum = a + b;
+    let diff_1 = a - b;
+    let diff_2 = b - a;
+    let avg = sum / 2;
+    let mul = a * b;
+
+    switch (c) {
+        case 1:
+            alert(`${a} + ${b} = ${sum}`);
+            break;
+        case 2:
+            alert(`${a} - ${b} = ${diff_1}\n${b} - ${a} = ${diff_2}`);
+            break;
+        case 3:
+            alert(`Average of ${a} and ${b} is ${avg}`);
+            break;
+        case 4:
+            alert(`${a} X ${b} = ${mul}`);
+            break;
+        case 5:
+            alert(`
+                ${a} + ${b} = ${sum}
+                ${a} - ${b} = ${diff_1}
+                ${b} - ${a} = ${diff_2}
+                Average of ${a} and ${b} is ${avg}
+                ${a} X ${b} = ${mul}`);
+            break;
+    }
+}
