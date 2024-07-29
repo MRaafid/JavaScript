@@ -10,6 +10,7 @@ console.group('Math Object');
     console.log(Math.sqrt(9))
     console.log(Math.round(9.78))
     console.log(Math.round(8.5))
+    console.log(Math.random())
 console.groupEnd();
 
 console.group('Unary Negation: ');

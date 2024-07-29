@@ -21,5 +21,3 @@
         console.log(a.split(' ,'));
     */
 }
-
-
