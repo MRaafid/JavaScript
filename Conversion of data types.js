@@ -31,5 +31,6 @@ console.groupEnd();
     let b = String(a)
     console.log(typeof e);
     console.log(typeof f);
-console.groupEnd();
+    console.groupEnd();
 }
+
